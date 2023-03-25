@@ -17,6 +17,7 @@
 		9BD9121D29CC95CE001A391E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9121C29CC95CE001A391E /* Network.swift */; };
 		9BD9122229CF36DE001A391E /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9122129CF36DE001A391E /* CharacterCell.swift */; };
 		9BD9122429CF4495001A391E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9122329CF4495001A391E /* CharacterDetailViewController.swift */; };
+		9BD9122729CF899E001A391E /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9122629CF899E001A391E /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9BD9121C29CC95CE001A391E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9BD9122129CF36DE001A391E /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		9BD9122329CF4495001A391E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		9BD9122629CF899E001A391E /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		9BD9120029CA3159001A391E /* HPCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				9BD9122529CF897D001A391E /* Helper */,
 				9BD9121E29CF368E001A391E /* Views */,
 				9BD9121B29CC95B6001A391E /* Networking */,
 				9BD9121829CA31E6001A391E /* Models */,
@@ -125,6 +128,14 @@
 				9BD9122129CF36DE001A391E /* CharacterCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9BD9122529CF897D001A391E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9122629CF899E001A391E /* CacheManager.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				9BD9120229CA3159001A391E /* AppDelegate.swift in Sources */,
 				9BD9121D29CC95CE001A391E /* Network.swift in Sources */,
 				9BD9122229CF36DE001A391E /* CharacterCell.swift in Sources */,
+				9BD9122729CF899E001A391E /* CacheManager.swift in Sources */,
 				9BD9122429CF4495001A391E /* CharacterDetailViewController.swift in Sources */,
 				9BD9121A29CA3277001A391E /* Character.swift in Sources */,
 				9BD9120429CA3159001A391E /* SceneDelegate.swift in Sources */,

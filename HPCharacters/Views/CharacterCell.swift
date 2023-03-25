@@ -18,21 +18,41 @@ final class CharacterCell: UITableViewCell {
     
     func configure(with character: Character) {
         nameLabel.text = character.name
-        actorLabel.text = character.actor
+        actorLabel.text = character.actorWhoPlayed
         houseLabel.text = character.house
         
-        if let imageURL = URL(string: character.image) {
+        guard let imageURL = URL(string: character.image) else {
+            characterImage.image = UIImage(systemName: "person.fill")
+            return
+        }
+        
+        if let imageData = CacheManager.getDataFromCache(imageURL) {
+            characterImage.image = UIImage(data: imageData)
+        } else {
             networkManager.fetchImage(from: imageURL) { [weak self] result in
                 switch result {
                 case .success(let imageData):
+                    CacheManager.setDataCache(imageURL, imageData)
                     self?.characterImage.image = UIImage(data: imageData)
                 case .failure(let error):
                     self?.characterImage.image = UIImage(systemName: "person.fill")
                     print(error)
                 }
             }
-        } else {
-            characterImage.image = UIImage(systemName: "person.fill")
         }
+        
+//        if let imageURL = URL(string: character.image) {
+//            networkManager.fetchImage(from: imageURL) { [weak self] result in
+//                switch result {
+//                case .success(let imageData):
+//                    self?.characterImage.image = UIImage(data: imageData)
+//                case .failure(let error):
+//                    self?.characterImage.image = UIImage(systemName: "person.fill")
+//                    print(error)
+//                }
+//            }
+//        } else {
+//            characterImage.image = UIImage(systemName: "person.fill")
+//        }
     }
 }

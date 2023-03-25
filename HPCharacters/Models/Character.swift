@@ -9,18 +9,17 @@ import Foundation
 
 struct Character: Decodable {
     let name: String
-    let actor: String
+    let actorWhoPlayed: String
     let alternateNames: [String]
-    let species: String
-    let gender: String
     let house: String
     let yearOfBirth: Int?
     let image: String
 }
 
-//extension Character {
-//    enum CodingKeys: String, CodingKey {
-//        case name
-//        case
-//    }
-//}
+extension Character {
+    enum CodingKeys: String, CodingKey {
+        case name, house, yearOfBirth, image
+        case alternateNames = "alternate_names"
+        case actorWhoPlayed = "actor"
+    }
+}

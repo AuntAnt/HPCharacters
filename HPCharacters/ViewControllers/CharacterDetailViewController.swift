@@ -31,23 +31,25 @@ class CharacterDetailViewController: UIViewController {
         setAlternateNamesLabel()
         setHouseLabel()
         setBirthYearLabel()
-        actorLabel.text = "Actor: \(character.actor)"
+        setActorLabel()
+//        actorLabel.text = "Actor: \(character.actor)"
         
-        networkManager.fetchImage(from: URL(string: character.image)!, completion: { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.characterImage.image = UIImage(data: imageData)
-            case .failure(let error):
-                print(error)
-            }
-        })
+        guard let imageUrl = URL(string: character.image) else {
+            characterImage.image = UIImage(systemName: "person.fill")
+            return
+        }
+        
+        characterImage.image = UIImage(data: CacheManager.getDataFromCache(imageUrl)!)
     }
     
+    // MARK: - private methods
     private func setAlternateNamesLabel() {
         if character.alternateNames.isEmpty {
             alternateNamesLabel.isHidden = true
         } else {
-            alternateNamesLabel.text = "Also known as\n \(character.alternateNames.joined(separator: ",\n"))".replacingOccurrences(of: ",", with: "")
+            alternateNamesLabel.text =
+            "Also known as:\n \(character.alternateNames.joined(separator: ",\n"))"
+                .replacingOccurrences(of: ",", with: "")
         }
     }
     
@@ -64,6 +66,14 @@ class CharacterDetailViewController: UIViewController {
             yearOfBirthLabel.text = "Year of birth: \(yearOfBirth)"
         } else {
             yearOfBirthLabel.isHidden = true
+        }
+    }
+    
+    private func setActorLabel() {
+        if character.actorWhoPlayed == "" {
+            actorLabel.isHidden = true
+        } else {
+            actorLabel.text = "Actor: \(character.actorWhoPlayed)"
         }
     }
 }
