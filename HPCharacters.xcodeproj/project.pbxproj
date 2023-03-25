@@ -66,7 +66,7 @@
 		9BD9120029CA3159001A391E /* HPCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				9BD9122529CF897D001A391E /* Helper */,
+				9BD9122529CF897D001A391E /* Helpers */,
 				9BD9121E29CF368E001A391E /* Views */,
 				9BD9121B29CC95B6001A391E /* Networking */,
 				9BD9121829CA31E6001A391E /* Models */,
@@ -130,12 +130,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9BD9122529CF897D001A391E /* Helper */ = {
+		9BD9122529CF897D001A391E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				9BD9122629CF899E001A391E /* CacheManager.swift */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
