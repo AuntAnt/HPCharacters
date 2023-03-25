@@ -7,12 +7,20 @@
 
 import Foundation
 
-struct Person: Decodable {
+struct Character: Decodable {
     let name: String
-    let alternate_names: [String]
+    let actor: String
+    let alternateNames: [String]
     let species: String
     let gender: String
     let house: String
     let yearOfBirth: Int?
     let image: String
 }
+
+//extension Character {
+//    enum CodingKeys: String, CodingKey {
+//        case name
+//        case
+//    }
+//}

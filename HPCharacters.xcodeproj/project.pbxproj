@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		9BD9120229CA3159001A391E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9120129CA3159001A391E /* AppDelegate.swift */; };
 		9BD9120429CA3159001A391E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9120329CA3159001A391E /* SceneDelegate.swift */; };
-		9BD9120629CA3159001A391E /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9120529CA3159001A391E /* CharacterViewController.swift */; };
+		9BD9120629CA3159001A391E /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9120529CA3159001A391E /* CharacterListViewController.swift */; };
 		9BD9120929CA3159001A391E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9120729CA3159001A391E /* Main.storyboard */; };
 		9BD9120B29CA315A001A391E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9120A29CA315A001A391E /* Assets.xcassets */; };
 		9BD9120E29CA315A001A391E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9120C29CA315A001A391E /* LaunchScreen.storyboard */; };
-		9BD9121A29CA3277001A391E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9121929CA3277001A391E /* Person.swift */; };
+		9BD9121A29CA3277001A391E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9121929CA3277001A391E /* Character.swift */; };
+		9BD9121D29CC95CE001A391E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9121C29CC95CE001A391E /* Network.swift */; };
+		9BD9122229CF36DE001A391E /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9122129CF36DE001A391E /* CharacterCell.swift */; };
+		9BD9122429CF4495001A391E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9122329CF4495001A391E /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9BD911FE29CA3159001A391E /* HPCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9120129CA3159001A391E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD9120329CA3159001A391E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BD9120529CA3159001A391E /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		9BD9120529CA3159001A391E /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		9BD9120829CA3159001A391E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BD9120A29CA315A001A391E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD9120D29CA315A001A391E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BD9120F29CA315A001A391E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD9121929CA3277001A391E /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9BD9121929CA3277001A391E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		9BD9121C29CC95CE001A391E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		9BD9122129CF36DE001A391E /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		9BD9122329CF4495001A391E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		9BD9120029CA3159001A391E /* HPCharacters */ = {
 			isa = PBXGroup;
 			children = (
+				9BD9121E29CF368E001A391E /* Views */,
+				9BD9121B29CC95B6001A391E /* Networking */,
 				9BD9121829CA31E6001A391E /* Models */,
 				9BD9121529CA316B001A391E /* App */,
 				9BD9121729CA3187001A391E /* ViewControllers */,
@@ -89,7 +97,8 @@
 		9BD9121729CA3187001A391E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9BD9120529CA3159001A391E /* CharacterViewController.swift */,
+				9BD9120529CA3159001A391E /* CharacterListViewController.swift */,
+				9BD9122329CF4495001A391E /* CharacterDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,9 +106,25 @@
 		9BD9121829CA31E6001A391E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BD9121929CA3277001A391E /* Person.swift */,
+				9BD9121929CA3277001A391E /* Character.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9BD9121B29CC95B6001A391E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9121C29CC95CE001A391E /* Network.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9BD9121E29CF368E001A391E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9122129CF36DE001A391E /* CharacterCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD9120629CA3159001A391E /* CharacterViewController.swift in Sources */,
+				9BD9120629CA3159001A391E /* CharacterListViewController.swift in Sources */,
 				9BD9120229CA3159001A391E /* AppDelegate.swift in Sources */,
-				9BD9121A29CA3277001A391E /* Person.swift in Sources */,
+				9BD9121D29CC95CE001A391E /* Network.swift in Sources */,
+				9BD9122229CF36DE001A391E /* CharacterCell.swift in Sources */,
+				9BD9122429CF4495001A391E /* CharacterDetailViewController.swift in Sources */,
+				9BD9121A29CA3277001A391E /* Character.swift in Sources */,
 				9BD9120429CA3159001A391E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
