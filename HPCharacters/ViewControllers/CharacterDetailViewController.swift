@@ -32,7 +32,6 @@ class CharacterDetailViewController: UIViewController {
         setHouseLabel()
         setBirthYearLabel()
         setActorLabel()
-//        actorLabel.text = "Actor: \(character.actor)"
         
         guard let imageUrl = URL(string: character.image) else {
             characterImage.image = UIImage(systemName: "person.fill")
