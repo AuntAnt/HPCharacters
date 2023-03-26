@@ -12,11 +12,34 @@ final class NetworkManager {
     
     private init() {}
     
+    /// Just for practice, currently not needed in this app
+    func fetch<T: Decodable>(to type: T.Type, from url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data else {
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let dataModel = try decoder.decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(dataModel))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
+    
     ///Getting characters
     func fetchCharacters(from url: URL, completion: @escaping(Result<[Character], NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data else {
                 completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No error description")
                 return
             }
             

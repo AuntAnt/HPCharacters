@@ -14,6 +14,8 @@ final class CharacterListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        fetchCharacters()
+        
         fetchCharacters()
         
         tableView.rowHeight = 80
