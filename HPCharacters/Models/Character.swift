@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character: Decodable {
+struct Character {
     let name: String
     let actorWhoPlayed: String
     let alternateNames: [String]
@@ -27,13 +27,5 @@ struct Character: Decodable {
     static func getAllCharacters(from data: Any) -> [Character] {
         guard let loadedCharacters = data as? [[String: Any]] else { return [] }
         return loadedCharacters.map { Character(from: $0) }
-    }
-}
-
-extension Character {
-    enum CodingKeys: String, CodingKey {
-        case name, house, yearOfBirth, image
-        case alternateNames = "alternate_names"
-        case actorWhoPlayed = "actor"
     }
 }
